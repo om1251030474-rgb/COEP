@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.375rem;
+    
+    /* Custom emergency colors */
+    --critical: 0 84.2% 60.2%;
+    --warning: 38 92% 50%;
+    --success: 158 64% 52%;
+    --info: 199 89% 48%;
+    --drone: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-black/60 backdrop-blur-xl border border-white/10 rounded-sm;
+  }
+
+  .glass-hud {
+    @apply bg-black/80 backdrop-blur-md border border-blue-500/20 rounded-sm;
+  }
+
+  .text-critical {
+    @apply text-red-500;
+  }
+
+  .text-warning {
+    @apply text-amber-500;
+  }
+
+  .text-success {
+    @apply text-emerald-500;
+  }
+
+  .text-info {
+    @apply text-sky-500;
+  }
+
+  .bg-critical {
+    @apply bg-red-500;
+  }
+
+  .bg-warning {
+    @apply bg-amber-500;
+  }
+
+  .bg-success {
+    @apply bg-emerald-500;
+  }
+
+  .bg-info {
+    @apply bg-sky-500;
+  }
+
+  .severity-badge {
+    @apply px-2 py-0.5 rounded-full text-xs font-mono font-bold uppercase;
+  }
+
+  .severity-critical {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+
+  .severity-high {
+    @apply bg-orange-500/20 text-orange-400 border border-orange-500/30;
+  }
+
+  .severity-medium {
+    @apply bg-amber-500/20 text-amber-400 border border-amber-500/30;
+  }
+
+  .severity-low {
+    @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+
+  .drone-status-available {
+    @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+
+  .drone-status-en-route {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+
+  .drone-status-on-scene {
+    @apply bg-amber-500/20 text-amber-400 border border-amber-500/30;
+  }
+
+  .drone-status-returning {
+    @apply bg-purple-500/20 text-purple-400 border border-purple-500/30;
+  }
+
+  .drone-status-charging {
+    @apply bg-slate-500/20 text-slate-400 border border-slate-500/30;
+  }
+
+  .btn-emergency {
+    @apply rounded-sm bg-red-600 text-white hover:bg-red-700 font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(239,68,68,0.4)] transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply rounded-sm bg-blue-600 text-white hover:bg-blue-700 font-bold uppercase tracking-wider transition-colors duration-200;
+  }
+
+  .video-viewfinder {
+    @apply relative;
+  }
+
+  .video-viewfinder::before,
+  .video-viewfinder::after {
+    content: '';
+    @apply absolute w-8 h-8 border-white/50;
+  }
+
+  .video-viewfinder::before {
+    @apply top-2 left-2 border-l-2 border-t-2;
+  }
+
+  .video-viewfinder::after {
+    @apply bottom-2 right-2 border-r-2 border-b-2;
+  }
+
+  .scanline-overlay {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.03) 50%,
+      transparent 100%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+  }
+
+  .pulse-critical {
+    animation: pulse-critical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-critical {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* Mapbox overrides for dark theme */
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-attrib {
+  @apply bg-black/50 text-white/50 text-xs;
+}
+
+.mapboxgl-popup-content {
+  @apply bg-slate-900 text-white border border-white/10 rounded-sm shadow-lg;
+  padding: 0 !important;
+}
+
+.mapboxgl-popup-tip {
+  border-top-color: rgb(15 23 42) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-600;
+}
+
+/* Debug wrapper styles */
+[data-debug-wrapper="true"] {
+  display: contents !important;
+}

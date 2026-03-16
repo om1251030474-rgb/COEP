@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "persona": "E1",
+    "philosophy": "Fusion over Imitation. Emotion First. Tactical Precision.",
+    "anti_patterns": [
+      "Purple/Teal gradients (unless cyberpunk specific)",
+      "Centered everything",
+      "Generic Inter font for headings",
+      "Soft shadows without borders in dark mode"
+    ]
+  },
+  "design_strategy": {
+    "theme_name": "The Night Watch",
+    "emotional_archetype": "The Performance Pro",
+    "core_vibe": "Tactical, High-Stakes, Real-Time, Trustworthy",
+    "visual_enhancers": [
+      "Glassmorphism (HUD Style): High blur, low opacity backgrounds, sharp 1px borders",
+      "Scanlines: Subtle overlays for video feeds",
+      "Neon Accents: Used sparingly for status indicators (Green=Online, Red=Critical)",
+      "Monospace Data: All numbers and metrics in JetBrains Mono"
+    ]
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Barlow Condensed, sans-serif",
+      "weights": ["600", "700", "900"],
+      "usage": "Page titles, Critical Alert Headers, KPI Values",
+      "instructions": "Use uppercase for top-level headers. Tracking tight."
+    },
+    "body": {
+      "font_family": "IBM Plex Sans, sans-serif",
+      "weights": ["400", "500"],
+      "usage": "General text, descriptions, logs"
+    },
+    "data": {
+      "font_family": "JetBrains Mono, monospace",
+      "weights": ["400", "700"],
+      "usage": "Coordinates, Timestamps, Battery levels, Telemetry data"
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": {
+        "primary": "#020617",
+        "secondary": "#0F172A",
+        "tertiary": "#1E293B"
+      },
+      "text": {
+        "primary": "#F8FAFC",
+        "secondary": "#94A3B8",
+        "muted": "#64748B"
+      },
+      "accents": {
+        "critical": "#EF4444",
+        "warning": "#F59E0B",
+        "success": "#10B981",
+        "info": "#0EA5E9",
+        "drone": "#3B82F6"
+      },
+      "border": {
+        "default": "rgba(255, 255, 255, 0.1)",
+        "active": "rgba(59, 130, 246, 0.5)",
+        "critical": "rgba(239, 68, 68, 0.5)"
+      }
+    },
+    "gradients": {
+      "critical_glow": "radial-gradient(circle, rgba(239,68,68,0.15) 0%, rgba(0,0,0,0) 70%)",
+      "hud_scan": "linear-gradient(180deg, rgba(59,130,246,0) 0%, rgba(59,130,246,0.1) 50%, rgba(59,130,246,0) 100%)"
+    }
+  },
+  "layout_system": {
+    "grid_strategy": "Bento Grid Mode B (High Density)",
+    "spacing": {
+      "container_padding": "p-4 md:p-6",
+      "gap": "gap-4",
+      "internal_padding": "p-4"
+    },
+    "containers": {
+      "dashboard_panel": "h-full rounded-none border border-border/30 bg-background/80 backdrop-blur-xl",
+      "floating_hud": "absolute z-50 rounded-sm border border-primary/20 bg-black/60 backdrop-blur-md"
+    },
+    "responsive_rules": {
+      "mobile": "Stack all panels, prioritize 'Report Incident' and 'Live Map'",
+      "desktop": "Map takes 100% background or central 80%. Panels float or dock to sides."
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase tracking-wider",
+      "destructive": "rounded-sm bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-[0_0_15px_rgba(239,68,68,0.4)]",
+      "outline": "rounded-sm border border-input bg-transparent hover:bg-accent hover:text-accent-foreground"
+    },
+    "cards": {
+      "style": "Sharp edges (rounded-sm or rounded-md max), 1px border, flat background or subtle glassmorphism.",
+      "hover": "border-primary/50 transition-colors duration-300"
+    },
+    "inputs": {
+      "style": "rounded-sm bg-secondary/50 border-border/50 focus:border-primary focus:ring-1 focus:ring-primary"
+    },
+    "badges": {
+      "style": "rounded-full px-2 py-0.5 text-xs font-mono font-bold uppercase"
+    },
+    "special": {
+      "telemetry_gauge": "Circular SVG progress rings with monospace values centered.",
+      "video_feed": "Container with corner brackets (corner-only borders) to simulate viewfinder."
+    }
+  },
+  "media": {
+    "image_urls": {
+      "hero_background": "https://images.unsplash.com/photo-1768571761104-df1cd3e6070c",
+      "emergency_alert_bg": "https://images.unsplash.com/photo-1588268393007-068bc70a443d",
+      "city_map_bg": "https://images.unsplash.com/photo-1628827921481-b9a468873cdb"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "preferred_icons": [
+        "Siren",
+        "Radio",
+        "Crosshair",
+        "MapPin",
+        "BatteryMedium",
+        "SignalHigh",
+        "AlertTriangle",
+        "ShieldAlert"
+      ]
+    }
+  },
+  "motion": {
+    "transitions": "transition-all duration-200 ease-out",
+    "animations": {
+      "pulse_critical": "animate-pulse",
+      "scanline": "custom-scanline-animation (css)",
+      "slide_in": "translate-x-0 opacity-100"
+    }
+  },
+  "accessibility": {
+    "rules": [
+      "Ensure text contrast > 4.5:1 on dark backgrounds",
+      "Use Aria labels for all icon-only buttons",
+      "Focus states must be high contrast (White ring on dark bg)"
+    ]
+  },
+  "tech_stack_specifics": {
+    "maps": "react-map-gl (Mapbox wrapper)",
+    "charts": "recharts (via Shadcn Chart)",
+    "notifications": "sonner"
+  },
+  "instructions_to_main_agent": [
+    "INSTALL FONTS: Add '@import url(\"https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap\");' to index.css",
+    "THEME: Force 'dark' class on the html element or body by default.",
+    "MAPS: Use a dark map style (e.g., mapbox://styles/mapbox/dark-v11) or custom dark style.",
+    "LAYOUT: On the Dashboard, make the Map the 'Hero'. It should be the background or the largest element. Floating panels for status.",
+    "INCIDENT REPORTING: On mobile, make the 'Emergency Type' buttons huge (grid-cols-2, aspect-square) for easy tapping.",
+    "TELEMETRY: Update drone positions via WebSocket (mocked or real). Animate the markers smoothly.",
+    "TESTING: Add data-testid to all interactive elements."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not use gradients for text.",
+    "Avoid centered layouts for dashboards; use grids.",
+    "Use 'backdrop-filter: blur(12px)' for overlays.",
+    "Do NOT use 'transition: all'. Animate specific properties.",
+    "Use 'sonner' for toasts.",
+    "Components must use named exports.",
+    "Pages must use default exports.",
+    "Add 'data-testid' to all interactive elements."
+  ]
+}
